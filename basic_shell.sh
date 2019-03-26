@@ -35,11 +35,9 @@ echo $@						        #Printing all Entered Values
 
 echo $#						        #Printing Count of Entered Values
 
-#############################
-
 ##################################IF/ELSE####################################
 
-#! /bin/bash
+#!/bin/bash
 
 echo "enter the word"
 read  word
@@ -55,7 +53,7 @@ fi
 
 ##############################
 
-#! /bin/bash
+#!/bin/bash
 
 echo -e "Enter the Name of the file: \c"		#\c is used so user can enter that in same line and -e is used so flags [\n,\t,\c] can be used with echo
 read file_name
@@ -69,7 +67,7 @@ fi
 
 ###############################
 
-#! /bin/bash
+#!/bin/bash
 
 echo -e "Name of the file: \c"
 read file_name
@@ -88,7 +86,7 @@ fi
 
 ################################
 
-#! /bin/bash
+#!/bin/bash
 
 read age
 
@@ -117,11 +115,9 @@ else
 echo "$age is not valid"
 fi
 
-###############################
-
 ###################################calculations using expr or without expr##################################
 
-#! /bin/bash
+#!/bin/bash
 
 num1=5
 num2=2
@@ -141,7 +137,7 @@ echo $(expr $num1 % $num2 )
 
 ################################
 
-#! /bin/bash
+#!/bin/bash
 
 num1=5.5
 num2=2
@@ -154,11 +150,9 @@ echo "$num1%$num2" | bc
 echo "scale=2;sqrt($num3)" | bc
 echo "scale=2;3^3" | bc -l
 
-################################
-
 ##################################################CASE#########################################
 
-#! /bin/bash
+#!/bin/bash
 
 vehicle=$1
 
@@ -175,11 +169,9 @@ case $vehicle in
         echo "Unknown Vehicle" ;;
 esac
 
-#################################
-
 #################################################ARRAY#############################################
 
-#! /bin/bash
+#!/bin/bash
 
 os=('ubuntu' 'windows' 'rhel')
 os[3]='mac'                                     # adding element to array
@@ -195,11 +187,9 @@ echo "${string[0]}"
 echo "${string[1]}"
 echo "${#string[@]}"
 
-###################################
-
 #####################################WHILE LOOP###################################
 
-#! /bin/bash
+#!/bin/bash
 
 n=1
 
@@ -212,14 +202,13 @@ done
 
 ####################################
 
-#! /bin/bash
+#!/bin/bash
 
 #method1
 while read var
 do
         echo $var
 done < 1.sh
-
 
 #method2
 cat 5.sh | while read var2
@@ -234,8 +223,6 @@ do
         echo $line
 done < 7.sh
 
-####################################
-
 ###########################################UNTIL LOOP##################################
 
 #! /bin/bash
@@ -246,8 +233,6 @@ do
         echo $n
         n=$(( n+1 ))
 done
-
-####################################
 
 #########################################FOR LOOP######################################
 
@@ -294,8 +279,6 @@ do
         fi
 done
 
-###################################
-
 ####################################SELECT LOOP###################################
 
 #! /bin/bash
@@ -320,8 +303,6 @@ do
         esac
 done
 
-######################################
-
 ########################################BREAK AND CONTINUE######################################
 
 #! /bin/bash
@@ -335,8 +316,6 @@ do
         fi
         echo $i
 done
-
-#######################################
 
 #######################################FUNCTION#################################################
 
