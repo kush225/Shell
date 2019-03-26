@@ -1,6 +1,6 @@
 #########################
 
-#! /bin/bash
+#!/bin/bash
 read usr              #read an input from user and store in usr variable
 echo "username $usr"    #print the usr variable
 #nothing
@@ -14,30 +14,30 @@ echo "username is $user_var"
 echo "password is $pass"
 
 echo "Enter Names:"
-read -a names
-echo "name: ${names[0]}, ${names[1]}"
-
+read -a names					#Can enter no. of names which will be stored in an array.
+echo "name: ${names[0]}, ${names[1]}"		#accessing stored array	
 
 echo "Enter Name:"
 read
 echo "Name: $REPLY"
-#nothing
 
 ############################
 
-#! /bin/bash
+#!/bin/bash
 
 echo $0 $1 $2 $3 ' > echo $1 $2 $3'
 
-args=("$@")
+args=("$@")					#Stored all the Entered Values
 
-echo ${args[0]} ${args[1]} ${args[2]}
+echo ${args[0]} ${args[1]} ${args[2]}		#Accessing Stored Values
 
-echo $@
+echo $@						#Printing all Entered Values
 
-echo $#
+echo $#						#Printing Count of Entered Values
 
 #############################
+
+##################################IF/ELSE####################################
 
 #! /bin/bash
 
@@ -57,10 +57,10 @@ fi
 
 #! /bin/bash
 
-echo -e "Enter the Name of the file: \c"
+echo -e "Enter the Name of the file: \c"		#\c is used so user can enter that in same line and -e is used so flags [\n,\t,\c] can be used with echo
 read file_name
 
-if [ -e $file_name ]
+if [ -e $file_name ]					#-e flag checks whether file exists
 then
         echo "$file_name Found"
 else
@@ -74,9 +74,9 @@ fi
 echo -e "Name of the file: \c"
 read file_name
 
-if [ -f $file_name ]
+if [ -f $file_name ]					#-f flag checks whether file is a regular file 
 then
-        if [ -w $file_name ]
+        if [ -w $file_name ]				#-w flag checks whether file has write permission
         then
                 echo "Type some text. to quit press ctrl+d"
                 cat >> $file_name
@@ -92,8 +92,7 @@ fi
 
 read age
 
-
-if [ "$age" -gt 18 ] && [ "$age" -lt 30 ]
+if [ "$age" -gt 18 ] && [ "$age" -lt 30 ]		#some ways to use and in shell scripting
 #if [ "$age" -gt 18 -a "$age" -lt 30 ]
 #if [[ "$age" -gt 18 && "$age" -lt 30 ]]
 
@@ -110,7 +109,8 @@ fi
 echo "enter the age"
 read age
 
-if [[ $age -eq 18 || $age -gt 55 ]]
+if [[ $age -eq 18 || $age -gt 55 ]]			#some ways to use or in shell scripting
+#if [ "$age" -eq 18 ] || [ "$age" -gt 55 ]
 then
 echo "$age is valid"
 else
@@ -119,8 +119,9 @@ fi
 
 ###############################
 
-#! /bin/bash
+###################################calculations using expr or without expr##################################
 
+#! /bin/bash
 
 num1=5
 num2=2
@@ -142,7 +143,6 @@ echo $(expr $num1 % $num2 )
 
 #! /bin/bash
 
-
 num1=5.5
 num2=2
 num3=11
@@ -155,6 +155,8 @@ echo "scale=2;sqrt($num3)" | bc
 echo "scale=2;3^3" | bc -l
 
 ################################
+
+##################################################CASE#########################################
 
 #! /bin/bash
 
@@ -175,16 +177,7 @@ esac
 
 #################################
 
-#! /bin/bash
-
-os=('ubuntu' 'windows' 'rhel')
-
-echo "${os[@]}"         # printing array
-echo "${os[1]}"         # printing 2nd element of array         
-echo "${!os[@]}"        # printing the index of array
-echo "${#os[@]}"        # printing the total element in array
-
-#################################
+#################################################ARRAY#############################################
 
 #! /bin/bash
 
@@ -204,16 +197,9 @@ echo "${#string[@]}"
 
 ###################################
 
+#####################################WHILE LOOP###################################
+
 #! /bin/bash
-#while loops
-
-
-#while [ condition ]
-#do
-#       command1
-#       command2
-#       command3
-#done
 
 n=1
 
@@ -250,9 +236,10 @@ done < 7.sh
 
 ####################################
 
+###########################################UNTIL LOOP##################################
+
 #! /bin/bash
 
-#until loops
 n=1
 until (( $n > 10 ))
 do
@@ -262,9 +249,10 @@ done
 
 ####################################
 
+#########################################FOR LOOP######################################
+
 #! /bin/bash
 
-#for loop
 echo ${BASH_VERSION}
 #method1
 
@@ -308,9 +296,9 @@ done
 
 ###################################
 
-#! /bin/bash
+####################################SELECT LOOP###################################
 
-#select loop
+#! /bin/bash
 
 select varName in kush ankit mark john
 do
@@ -334,9 +322,9 @@ done
 
 ######################################
 
-#! /bin/bash
+########################################BREAK AND CONTINUE######################################
 
-#break and continue statement
+#! /bin/bash
 
 for (( i=1; i<=10; i++ ))
 do
@@ -350,9 +338,9 @@ done
 
 #######################################
 
-#! /bin/bash
+#######################################FUNCTION#################################################
 
-#function
+#! /bin/bash
 
 print(){
 echo $1 $2 $3
@@ -371,8 +359,6 @@ quit
 
 #! /bin/bash
 
-#function
-
 print(){
 local name=$1
 echo "the name is $name"
@@ -388,8 +374,6 @@ echo "the name is $name : after"
 ########################################
 
 #! /bin/bash
-
-#function example
 
 usage(){
 echo "you need to provide an argument : "
@@ -416,7 +400,6 @@ fi
 
 #! /bin/bash
 
-#function example
 
 
 readonly var=31
@@ -446,11 +429,12 @@ readonly -f     #to see all the readonly varibles use readonly -p and for functi
 
 ############################################
 
+#####################################TRAP STATEMENT####################################
+
 #! /bin/bash         
 
 set -x
 
-#Trap statement
 file=/home/kushagra/Desktop/shell/empty
 trap "rm -f $file && echo file deleted; exit" 0 2 9 15
 
@@ -465,5 +449,3 @@ do
         echo $count
 done
 exit 0
-
-############################################
