@@ -1,5 +1,3 @@
-#!/bin/bash
-
 read -p "Enter the Total numbers: " n
 echo "Enter Numbers: "
 
