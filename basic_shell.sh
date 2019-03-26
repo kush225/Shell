@@ -1,8 +1,8 @@
 #########################
 
 #!/bin/bash
-read usr              #read an input from user and store in usr variable
-echo "username $usr"    #print the usr variable
+read usr                                                #read an input from user and store in usr variable
+echo "username $usr"                                    #print the usr variable
 #nothing
 
 ##########################
@@ -14,8 +14,8 @@ echo "username is $user_var"
 echo "password is $pass"
 
 echo "Enter Names:"
-read -a names					#Can enter no. of names which will be stored in an array.
-echo "name: ${names[0]}, ${names[1]}"		#accessing stored array	
+read -a names					        #Can enter no. of names which will be stored in an array.
+echo "name: ${names[0]}, ${names[1]}"		        #accessing stored array	
 
 echo "Enter Name:"
 read
@@ -27,13 +27,13 @@ echo "Name: $REPLY"
 
 echo $0 $1 $2 $3 ' > echo $1 $2 $3'
 
-args=("$@")					#Stored all the Entered Values
+args=("$@")					        #Stored all the Entered Values
 
-echo ${args[0]} ${args[1]} ${args[2]}		#Accessing Stored Values
+echo ${args[0]} ${args[1]} ${args[2]}		        #Accessing Stored Values
 
-echo $@						#Printing all Entered Values
+echo $@						        #Printing all Entered Values
 
-echo $#						#Printing Count of Entered Values
+echo $#						        #Printing Count of Entered Values
 
 #############################
 
@@ -182,12 +182,12 @@ esac
 #! /bin/bash
 
 os=('ubuntu' 'windows' 'rhel')
-os[3]='mac'             # adding element to array
-unset os[2]             # deleting element from array
-echo "${os[@]}"         # printing array
-echo "${os[1]}"         # printing 1st element of array         
-echo "${!os[@]}"        # printing the index of array
-echo "${#os[@]}"        # printing the total element in array
+os[3]='mac'                                     # adding element to array
+unset os[2]                                     # deleting element from array
+echo "${os[@]}"                                 # printing array
+echo "${os[1]}"                                 # printing 1st element of array         
+echo "${!os[@]}"                                # printing the index of array
+echo "${#os[@]}"                                # printing the total element in array
 
 string=saksdnjajnanfknfsam
 echo "${string[@]}"
@@ -262,7 +262,7 @@ do
 done
 
 #method2
-for var in {1..10..2}   #start..end..increment
+for var in {1..10..2}                           #start..end..increment
 do
         echo $var
 done
@@ -346,7 +346,7 @@ print(){
 echo $1 $2 $3
 }
 
-function quit(){        #its optional to write keyword function 
+function quit(){                                #its optional to write keyword function 
 exit
 }
 print Hello kush 
@@ -417,7 +417,7 @@ echo "hello world"
 }
 
 
-readonly -f hello       #for function to use readonly we have to use -f flag
+readonly -f hello                               #for function to use readonly we have to use -f flag
 
 
 hello()
@@ -425,7 +425,7 @@ hello()
 echo "hello world sexy"
 }
 
-readonly -f     #to see all the readonly varibles use readonly -p and for function use -f
+readonly -f                                     #to see all the readonly varibles use readonly -p and for function use -f
 
 ############################################
 
