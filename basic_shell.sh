@@ -178,7 +178,7 @@ os=('ubuntu' 'windows' 'rhel')
 os[3]='mac'                                     # adding element to array
 unset os[2]                                     # deleting element from array
 echo "${os[@]}"                                 # printing array
-echo "${os[1]}"                                 # printing 1st element of array         
+echo "${os[1]}"                                 # printing element from array at index 1        
 echo "${!os[@]}"                                # printing the index of array
 echo "${#os[@]}"                                # printing the total element in array
 
