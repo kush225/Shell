@@ -108,6 +108,7 @@ echo "enter the age"
 read age
 
 if [[ $age -eq 18 || $age -gt 55 ]]			#some ways to use or in shell scripting
+#if [ "$age" -eq 18 -o "$age" -gt 55 ]
 #if [ "$age" -eq 18 ] || [ "$age" -gt 55 ]
 then
 echo "$age is valid"
