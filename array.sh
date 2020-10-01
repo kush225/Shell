@@ -1,4 +1,4 @@
-read -p "Enter the Total numbers: " n
+read -p "Enter the Total numbers which you want in Array: " n
 echo "Enter Numbers: "
 
 i=0
