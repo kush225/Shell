@@ -1,5 +1,5 @@
 #!/bin/bash
-echo "Enter Array Limit"
+echo "Enter Array Limits for you search"
 read limit
 echo "Enter Elements"
 n=0
