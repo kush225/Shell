@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo "Enter a number and check if its a lucky number or not"
-echo "Enter the number: "
+echo "Enter the number you want to check: "
 read num
 function luckyseven() {
 sum=0
